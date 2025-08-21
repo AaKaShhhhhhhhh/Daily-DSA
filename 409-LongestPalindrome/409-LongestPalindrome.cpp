@@ -1,4 +1,4 @@
-// Last updated: 8/21/2025, 6:51:47 PM
+// Last updated: 8/21/2025, 6:52:43 PM
 class Solution {
 public:
     int longestPalindrome(string s) {
