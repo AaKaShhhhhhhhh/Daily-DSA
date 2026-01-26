@@ -1,23 +1,37 @@
-// Last updated: 1/25/2026, 7:45:38 PM
+// Last updated: 1/26/2026, 10:55:35 AM
 1class Solution {
 2public:
-3    int minimumDifference(vector<int>& nums, int k) {
+3    vector<vector<int>> minimumAbsDifference(vector<int>& arr) {
 4        
-5        sort(nums.begin() , nums.end());
-6
-7        int left = 0 ;
-8        int right = k-1;
-9        if(nums.size() == 1)return 0;
-10        int mini = INT_MAX;
-11        while(right < nums.size()){
-12            
+5        int n = arr.size();
+6        sort(arr.begin() , arr.end());
+7
+8        int a = 0 ;
+9        int b = 1;
+10      //  int dif = 0;
+11        int mini = INT_MAX;
+12        vector<vector<int>> ans;
 13
-14          //  diff = nums[right] - nums[left];
-15            mini = min(mini , nums[right] - nums[left]);
-16            left++;
-17            right++;
+14        while( b < n ){
+15           // dif = abs(arr[b] - arr[a]);
+16            mini = min(mini , abs(arr[b] - arr[a]));
+17           // smallestdif = mini;
 18
-19        }
-20        return mini;
-21    }
-22};
+19           // if(smallestdif < )
+20           a++;
+21           b++;
+22           
+23        }
+24        for(int i = 1 ; i < n ; i ++){
+25
+26            if(abs(arr[i] - arr[i-1]) == mini){
+27            ans.push_back({arr[i-1] , arr[i]});
+28            
+29           }
+30
+31        }
+32        
+33        return ans;
+34         
+35    }
+36};
